@@ -3,4 +3,5 @@ class Store < ApplicationRecord
 
   has_many :drinks
 
+  alias_attribute :id, :yelp_store_id
 end

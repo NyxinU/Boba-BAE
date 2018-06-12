@@ -16,12 +16,16 @@ class Api::StoresController < ApplicationController
   def show
     @store = Store.find_by(yelp_store_id: params[:id])
     yelp_store_info = get_store_info(params[:id])
+
     
     if yelp_store_info
-      if @store
-        render json: store.to_json
-      else 
+      categories = find_categories(yelp_store_info)
+      if @store 
+        render json: yelp_store_info.to_json
+      elsif categories.include?("bubbletea")
         create
+      else
+        render json:["Business is not a Boba Shop"], status: 422
       end 
     else 
       render json: ["Business does not exist"], status: 404
@@ -32,7 +36,11 @@ class Api::StoresController < ApplicationController
   private 
 
   def store_params 
-    params.require(:store).permit(:yelp_store_id)
+    params.permit(:id)
+  end 
+
+  def find_categories(yelp_store_info) 
+    yelp_store_info["categories"].map { |hash| hash["alias"]}
   end 
 
   # Constants, do not change these
