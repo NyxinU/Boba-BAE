@@ -3,11 +3,11 @@ class Api::StoresController < ApplicationController
   require "http"
   require "optparse"
 
-  def create
+  def create(yelp_store_info)
     @store = Store.new(store_params)
 
     if @store.save
-      render :show 
+      render json: yelp_store_info.to_json
     else 
       render json: @store.errors.full_messages, status: 422
     end 
@@ -17,13 +17,11 @@ class Api::StoresController < ApplicationController
     @store = Store.find_by(yelp_store_id: params[:id])
     yelp_store_info = get_store_info(params[:id])
 
-    
-    if yelp_store_info
-      categories = find_categories(yelp_store_info)
+    unless yelp_store_info["error"]
       if @store 
         render json: yelp_store_info.to_json
-      elsif categories.include?("bubbletea")
-        create
+      elsif find_categories(yelp_store_info).include?("bubbletea")
+        create(yelp_store_info)
       else
         render json:["Business is not a Boba Shop"], status: 422
       end 
