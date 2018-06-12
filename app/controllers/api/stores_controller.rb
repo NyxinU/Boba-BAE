@@ -14,8 +14,8 @@ class Api::StoresController < ApplicationController
   end 
 
   def show
-    @store = Store.find_by(yelp_store_id: params[:id])
     yelp_store_info = get_store_info(params[:id])
+    @store = Store.find_by(yelp_store_id: yelp_store_info["alias"])
 
     unless yelp_store_info["error"]
       if @store 
