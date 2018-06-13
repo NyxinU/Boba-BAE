@@ -28,7 +28,6 @@ class Api::StoresController < ApplicationController
     else 
       render json: ["Business does not exist"], status: 404
     end 
-
   end 
 
   private 
