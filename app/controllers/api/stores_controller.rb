@@ -30,7 +30,7 @@ class Api::StoresController < ApplicationController
     end 
   end 
 
-  private 
+  private   
 
   def store_params 
     params.permit(:id)
