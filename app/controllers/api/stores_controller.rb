@@ -23,10 +23,10 @@ class Api::StoresController < ApplicationController
       elsif find_categories(yelp_store_info).include?("bubbletea")
         create(yelp_store_info)
       else
-        render json:["Business is not a Boba Shop"], status: 422
+        render json: { error: "Business is not a Boba Shop" }, status: 422
       end 
     else 
-      render json: ["Business does not exist"], status: 404
+      render json: { error: "Business does not exist" }, status: 404
     end 
   end 
 
