@@ -1,10 +1,8 @@
 import React from 'react';
-import { Provider } from 'react-redux';
 import {
   Route,
   Switch,
 } from 'react-router-dom';
-import styled from 'styled-components';
 
 import StoreShowContainer from './store/store_show_container';
 
