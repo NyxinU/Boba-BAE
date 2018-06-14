@@ -1,17 +1,19 @@
 import React from 'react';
-import {
-  Route,
-  Switch,
-} from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
+import styled from 'styled-components';
 
-import StoreShowContainer from './store/store_show_container';
+import StoreShowContainer from './store/StoreShowContainer';
+
+const StyledApp = styled.div`
+  font-family: 'Roboto', sans-serif;
+`;
 
 const App = () => (
-  <div>
+  <StyledApp>
     <Switch>
       <Route exact path="/biz/:businessId" component={StoreShowContainer} />
     </Switch>
-  </div>
+  </StyledApp>
 );
 
 export default App;
