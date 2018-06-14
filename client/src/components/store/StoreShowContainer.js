@@ -1,10 +1,11 @@
 import { connect } from 'react-redux';
 
 import { fetchStore } from '../../actions/store_actions';
+import { getStoreInfo } from '../../reducers/selector'
 import StoreShow from './StoreShow';
 
 const mapStateToProps = (state) => {
-  const store = state.entities.stores[Object.keys(state.entities.stores)[0]];
+  const store = getStoreInfo(state.entities.stores);
   return {
     store,
   };
