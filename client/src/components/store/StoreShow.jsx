@@ -1,4 +1,11 @@
 import React from 'react';
+import styled from 'styled-components';
+
+import StoreInformation from './StoreInformation';
+
+const StyledStoreShow = styled.div`
+
+`;
 
 class StoreShow extends React.Component {
   componentDidMount() {
@@ -18,9 +25,9 @@ class StoreShow extends React.Component {
       );
     }
     return (
-      <div>
-        <p>rendered</p>
-      </div>
+      <StyledStoreShow>
+        <StoreInformation store={this.props.store}/>
+      </StyledStoreShow>
     );
   }
 }
