@@ -13,7 +13,6 @@ const StarRating = ({ rating }) => {
   };
 
   const color = colorScale[Math.floor(rating).toString()];
-
   const ratingArr = [];
   while (ratingArr.length < 5) {
     if (rating >= .75) {
