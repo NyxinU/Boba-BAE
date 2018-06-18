@@ -28,9 +28,9 @@ const StarRating = ({ rating }) => {
   }
 
   return (
-    <div>
+    <span>
       {ratingArr.map((fill, i) => <Star key={i} fill={fill} />)}
-    </div>
+    </span>
   );
 };
 

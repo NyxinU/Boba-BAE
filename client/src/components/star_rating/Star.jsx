@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const StyledStar = styled.i`
   margin-right: 3px;
-  font-size: 5.5vw;
+  font-size: 4.5vw;
   color: white;
   padding: 1vw; 
   border-radius: 1vw;
