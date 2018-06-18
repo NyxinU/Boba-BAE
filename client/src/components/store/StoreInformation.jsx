@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import StarRating from "../star_rating/StarRating";
 import StoreHours from "./StoreHours";
-import { Text } from "../GlobalStyledComponents";
+import { Text, Line } from "../GlobalStyledComponents";
 
 const StoreName = styled.h2`
   margin-top: 2vw;
@@ -20,6 +20,7 @@ const StoreInformation = ({ store }) => (
     <StarRating rating={store.rating} />
     <ReviewCount>{store.review_count} Reviews</ReviewCount>
     <StoreHours hours={store.hours} />
+    <Line />
   </div>
 );
 
