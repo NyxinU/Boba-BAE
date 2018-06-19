@@ -1,13 +1,15 @@
 import React from "react";
-import Star from "../star_rating/Star";
-import { Text, BottomLabeledButtons } from "../GlobalStyledComponents";
-// import styled from "styled-components";
+import {
+  Text,
+  BottomLabeledButtons,
+  StyledIcon
+} from "../GlobalStyledComponents";
 
 const ReviewButton = () => {
 
   return (
   <BottomLabeledButtons>
-    <Star fill={"#999999"} />
+      <StyledIcon className="fas fa-star"/>
     <Text>Review</Text>
   </BottomLabeledButtons>
   );

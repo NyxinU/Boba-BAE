@@ -5,14 +5,14 @@ import {
   StyledIcon
 } from "../GlobalStyledComponents";
 
-const DirectionsButton = ({ phone }) => {
+const BookmarkButton = () => {
 
   return (
     <BottomLabeledButtons>
-      <StyledIcon className="fas fa-map"/>
-      <Text>Directions</Text>
+      <StyledIcon className="fas fa-bookmark"/>
+      <Text>Bookmark</Text>
     </BottomLabeledButtons>
   );
 };
 
-export default DirectionsButton;
+export default BookmarkButton;

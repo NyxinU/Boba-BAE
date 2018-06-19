@@ -24,4 +24,9 @@ export const BottomLabeledButtons = styled.button`
   align-items: center;
 `;
 
+export const StyledIcon = styled.i`
+  font-size: 5vw;
+  color: #999999;
+`;
+
 

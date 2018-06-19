@@ -1,16 +1,13 @@
 import React from "react";
-import styled from "styled-components";
-import { Text, BottomLabeledButtons } from "../GlobalStyledComponents";
+import {
+  Text,
+  BottomLabeledButtons,
+  StyledIcon
+} from "../GlobalStyledComponents";
 
-const StyledPhoneIcon = styled.i`
-  font-size: 4.5vw;
-  color: white;
-  padding: 1vw 1vw 1vw 1vw;
-  border-radius: 1vw;
-  background: #999999;
-  transform: scaleX(-1);
+const StyledStarIcon = StyledIcon.extend`
+  transform: scaleX(-1); 
 `;
-
 
 const CallButton = ({ phone }) => {
   
@@ -20,7 +17,7 @@ const CallButton = ({ phone }) => {
 
   return (
       <BottomLabeledButtons onClick={callStore}>
-        <StyledPhoneIcon className="fas fa-phone" />
+        <StyledStarIcon className="fas fa-phone" />
         <Text>Call</Text>
       </BottomLabeledButtons>
   );
