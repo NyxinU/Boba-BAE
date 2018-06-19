@@ -8,10 +8,10 @@ const StoreActionButtonContainer = styled.div`
   justify-content: space-around;
 `;
 
-const StoreActionButtons = () => (
+const StoreActionButtons = ({phone}) => (
   <StoreActionButtonContainer>
     <ReviewButton />
-    <CallButton />
+    <CallButton phone={phone}/>
   </StoreActionButtonContainer>
 );
 

@@ -11,14 +11,15 @@ const StyledPhoneIcon = styled.i`
   transform: scaleX(-1);
 `;
 
-const handleCall = () => {
-  window.location.href="tel:14153171420";
-};
 
-const CallButton = () => {
+const CallButton = ({ phone }) => {
+  
+  const callStore = () => {
+    window.location.href=`tel:${phone}`;
+  };
 
   return (
-      <BottomLabeledButtons onClick={handleCall}>
+      <BottomLabeledButtons onClick={callStore}>
         <StyledPhoneIcon className="fas fa-phone" />
         <Text>Call</Text>
       </BottomLabeledButtons>

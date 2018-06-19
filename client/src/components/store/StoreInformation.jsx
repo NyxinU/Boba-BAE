@@ -22,7 +22,7 @@ const StoreInformation = ({ store }) => (
     <ReviewCount>{store.review_count} Reviews</ReviewCount>
     <StoreHours hours={store.hours} />
     <Line />
-    <StoreActionButtons />
+    <StoreActionButtons phone={store.phone}/>
   </div>
 );
 
