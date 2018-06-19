@@ -5,7 +5,7 @@ import { Text, BottomLabeledButtons } from "../GlobalStyledComponents";
 const StyledPhoneIcon = styled.i`
   font-size: 4.5vw;
   color: white;
-  padding: 1vw 1vw 1.05vw 1vw;
+  padding: 1vw 1vw 1vw 1vw;
   border-radius: 1vw;
   background: #999999;
   transform: scaleX(-1);
