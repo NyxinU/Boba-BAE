@@ -15,6 +15,13 @@ export const Line = styled.div`
     width: 90vw;
     padding-top: 0.5vh;
     border-bottom: 1px solid #e6e6e6;
-  }`;
+  }
+`;
+
+export const BottomLabeledButtons = styled.button`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
 
 

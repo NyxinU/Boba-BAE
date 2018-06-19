@@ -5,13 +5,13 @@ const StyledStar = styled.i`
   margin-right: 3px;
   font-size: 4.5vw;
   color: white;
-  padding: 1vw; 
+  padding: 1vw 1vw 1.05vw 1vw; 
   border-radius: 1vw;
   background: ${props => props.fill};
 `;
 
-const Star = ({ fill, color }) => (
-  <StyledStar className="fas fa-star" fill={fill} color={color}/>
+const Star = ({ fill }) => (
+  <StyledStar className="fas fa-star" fill={fill}/>
 );
 
 export default Star;
