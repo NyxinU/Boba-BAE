@@ -6,7 +6,7 @@ import { Text, Line } from "../GlobalStyledComponents";
 import StoreActionButtons from "./StoreActionButtons";
 
 const StoreName = styled.h2`
-  margin-top: 2vw;
+  margin-top: 4vw;
   margin-bottom: 1vw;
   font-size: 6vw;
 `;

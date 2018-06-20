@@ -23,6 +23,8 @@ export const BottomLabeledButtons = styled.button`
   align-items: center;
   padding: 0;
   width: 22.5vw;
+  border: none;
+  background: none;
 `;
 
 export const StyledIcon = styled.i`
