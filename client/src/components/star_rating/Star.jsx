@@ -3,9 +3,9 @@ import styled from "styled-components";
 
 const StyledStar = styled.i`
   margin-right: 3px;
-  font-size: 4.5vw;
+  font-size: 3.5vw;
   color: white;
-  padding: 1vw 1vw 1.05vw 1vw; 
+  padding: 1vw; 
   border-radius: 1vw;
   background: ${props => props.fill};
 `;

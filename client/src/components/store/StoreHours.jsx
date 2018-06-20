@@ -1,6 +1,10 @@
 import React from 'react';
-// import styled from 'styled-components';
+import styled from 'styled-components';
 import { Text } from "../GlobalStyledComponents";
+
+const StyledStoreHours = styled.div`
+  margin-top: 1vw;
+`;
 
 const StoreHours = ({ hours }) => {
   const timeConvert = {
@@ -43,13 +47,15 @@ const StoreHours = ({ hours }) => {
   };
 
   const storeHours = getStoreHours();
-  return <div>
+  return (
+    <StyledStoreHours>
       <Text>{hours[0].is_open_now ? "Open" : "Closed"}</Text>
       <Text>&nbsp;&#8226;&nbsp;</Text>
       <Text>
         {`${timeConvert[storeHours[0]]}`} - {`${timeConvert[storeHours[1]]}`}
       </Text>
-    </div>;
+    </StyledStoreHours>
+  );
 };
 
 export default StoreHours;

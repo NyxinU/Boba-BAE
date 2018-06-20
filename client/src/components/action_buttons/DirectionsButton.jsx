@@ -10,7 +10,7 @@ const DirectionsButton = ({ phone }) => {
   return (
     <BottomLabeledButtons>
       <StyledIcon className="fas fa-map"/>
-      <Text>Directions</Text>
+      <Text>Map</Text>
     </BottomLabeledButtons>
   );
 };

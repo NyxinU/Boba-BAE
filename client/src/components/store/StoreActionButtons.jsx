@@ -7,7 +7,8 @@ import BookmarkButton from "../action_buttons/BookmarkButton";
 
 const StoreActionButtonContainer = styled.div`
   display: flex;
-  justify-content: space-around;
+  width: 90vw;
+  margin: 4vw auto;
 `;
 
 const StoreActionButtons = ({phone}) => (
