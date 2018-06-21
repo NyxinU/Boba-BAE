@@ -5,6 +5,7 @@ import StoreHours from "./StoreHours";
 import { Text, Line } from "../GlobalStyledComponents";
 import StoreActionButtons from "./StoreActionButtons";
 import StoreMap from "./StoreMap";
+import StoreAddress from "./StoreAddress";
 
 const StoreName = styled.h2`
   margin-top: 4vw;
@@ -12,19 +13,16 @@ const StoreName = styled.h2`
   font-size: 6vw;
 `;
 
-const ReviewCount = Text.extend`
-
-`
-
 const StoreInformation = ({ store }) => (
   <div>
     <StoreName>{store.name}</StoreName>
     <StarRating rating={store.rating} />
-    <ReviewCount>{store.review_count} Reviews</ReviewCount>
+    <Text>{store.review_count} Reviews</Text>
     <StoreHours hours={store.hours} />
     <Line />
     <StoreActionButtons />
     <StoreMap name={store.name} location={store.location} />
+    <StoreAddress location={store.location.display_address} />
   </div>
 );
 

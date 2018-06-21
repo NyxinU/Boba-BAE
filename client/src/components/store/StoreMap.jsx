@@ -5,6 +5,7 @@ const StyledStoreMap = styled.iframe`
   display: inline-block;
   width: 90vw;
   height: 45vw;
+  margin-bottom: 4vw;
   frameborder: 0;
   border: 0; 
 `;
