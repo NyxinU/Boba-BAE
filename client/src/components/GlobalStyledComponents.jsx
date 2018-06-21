@@ -22,7 +22,7 @@ export const BottomLabeledButtons = styled.button`
   flex-direction: column;
   align-items: center;
   padding: 0;
-  width: 22.5vw;
+  width: 30vw;
   border: none;
   background: none;
 `;

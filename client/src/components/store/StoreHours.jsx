@@ -6,6 +6,10 @@ const StyledStoreHours = styled.div`
   margin-top: 1vw;
 `;
 
+const OpenClosedLabel = Text.extend`
+  color: ${props => props.open ? "#00c600" : "black" };
+`;
+
 const StoreHours = ({ hours }) => {
   const timeConvert = {
     "0000": "12:00 am",
@@ -49,7 +53,7 @@ const StoreHours = ({ hours }) => {
   const storeHours = getStoreHours();
   return (
     <StyledStoreHours>
-      <Text>{hours[0].is_open_now ? "Open" : "Closed"}</Text>
+      <OpenClosedLabel open={hours[0].is_open_now}>{hours[0].is_open_now ? "Open" : "Closed"}</OpenClosedLabel>
       <Text>&nbsp;&#8226;&nbsp;</Text>
       <Text>
         {`${timeConvert[storeHours[0]]}`} - {`${timeConvert[storeHours[1]]}`}

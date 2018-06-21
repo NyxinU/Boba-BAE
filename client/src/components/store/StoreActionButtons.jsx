@@ -1,8 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import ReviewButton from "../action_buttons/ReviewButton";
-import CallButton from "../action_buttons/CallButton";
-import DirectionsButton from "../action_buttons/DirectionsButton";
+import CheckInButton from "../action_buttons/CheckInButton";
 import BookmarkButton from "../action_buttons/BookmarkButton";
 
 const StoreActionButtonContainer = styled.div`
@@ -11,11 +10,10 @@ const StoreActionButtonContainer = styled.div`
   margin: 4vw auto;
 `;
 
-const StoreActionButtons = ({phone}) => (
+const StoreActionButtons = () => (
   <StoreActionButtonContainer>
     <ReviewButton />
-    <CallButton phone={phone}/>
-    <DirectionsButton />
+    <CheckInButton />
     <BookmarkButton />
   </StoreActionButtonContainer>
 );
