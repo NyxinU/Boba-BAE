@@ -10,7 +10,7 @@ const StyledStoreAddress = styled.div`
 const StoreAddress = ({ location }) => {
   return (
     <StyledStoreAddress>
-      {location.map(address => <Text>{address}</Text>)}
+      {location.map((address, i) => <Text key={i}>{address}</Text>)}
     </StyledStoreAddress>
   );
 };
