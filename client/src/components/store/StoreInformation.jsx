@@ -24,7 +24,7 @@ const StoreInformation = ({ store }) => (
     <StoreHours hours={store.hours} />
     <Line />
     <StoreActionButtons />
-    <StoreMap coordinates={store.coordinates} />
+    <StoreMap name={store.name} location={store.location} />
   </div>
 );
 
