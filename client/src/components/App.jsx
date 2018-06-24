@@ -12,6 +12,7 @@ const App = () => (
   <StyledApp>
     <Switch>
       <Route exact path="/biz/:businessId" component={StoreShowContainer} />
+      <Route exact path="/biz/:businessId/more" />
     </Switch>
   </StyledApp>
 );

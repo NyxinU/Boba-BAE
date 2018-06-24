@@ -1,25 +1,38 @@
 import React from "react";
+import styled from "styled-components";
 import {
   Text,
   BottomLabeledButtons,
   StyledIcon
 } from "../GlobalStyledComponents";
 
-const StyledStarIcon = StyledIcon.extend`
-  transform: scaleX(-1); 
+const StyledCallIcon = StyledIcon.extend`
+  transform: scaleX(-1);
+  margin-bottom: 0;
+  font-size: 3.5vw;
+  color: #5b5b5b;
 `;
 
-const CallButton = ({ phone }) => {
+const StyledCallButton = styled.button`
+  display: flex;
+  align-items: center;
+  padding: 0;
+  border: none;
+  background: none;
+`;
+
+const CallButton = ({ phone, displayPhone }) => {
   
   const callStore = () => {
     window.location.href=`tel:${phone}`;
   };
 
   return (
-      <BottomLabeledButtons onClick={callStore}>
-        <StyledStarIcon className="fas fa-phone" />
-        <Text>Call</Text>
-      </BottomLabeledButtons>
+      <StyledCallButton onClick={callStore}>
+        <StyledCallIcon className="fas fa-phone" />
+        &nbsp;&nbsp;
+        <Text>Call {`${displayPhone}`}</Text>
+      </StyledCallButton>
   );
 };
 

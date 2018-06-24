@@ -5,6 +5,7 @@ import { Text } from "../GlobalStyledComponents";
 const StyledStoreAddress = styled.div`
   display: flex;
   flex-direction: column;
+  margin-bottom: 4vw;
 `;
 
 const StoreAddress = ({ location }) => {
