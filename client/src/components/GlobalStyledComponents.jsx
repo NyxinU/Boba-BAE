@@ -7,6 +7,11 @@ export const Text = styled.p`
   font-size: 3.5vw;
 `;
 
+export const Label = Text.extend`
+  font-size: 2.5vw;
+  color: #999999;
+`;
+
 export const Line = styled.div`
   &:after {
     content: "";

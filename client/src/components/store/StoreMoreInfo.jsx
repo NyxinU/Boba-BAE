@@ -1,4 +1,18 @@
 import React from "react";
+import styled from "styled-components";
+import { Modal, Button } from 'react-bootstrap';
+import { Text, Label } from "../GlobalStyledComponents";
+
+const MoreInfoButton = styled.button`
+  display: flex;
+  flex-direction: column;
+  width: 90vw;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background: none;
+  color: #0F6BFF;
+`;
 
 class StoreMoreInfo extends React.Component {
   constructor(props, context) {
@@ -23,11 +37,11 @@ class StoreMoreInfo extends React.Component {
   render() {
     return (
       <div>
-        <p>Click to get the full Modal experience!</p>
+        <MoreInfoButton onClick={this.handleShow}>
+          <Text> More Info </Text>
+          <Label>Hours, Features, Payments, Amenities</Label>
+        </MoreInfoButton>
 
-        <Button bsStyle="primary" bsSize="large" onClick={this.handleShow}>
-          Launch demo modal
-        </Button>
 
         <Modal show={this.state.show} onHide={this.handleClose}>
           <Modal.Header closeButton>
@@ -37,24 +51,6 @@ class StoreMoreInfo extends React.Component {
             <h4>Text in a modal</h4>
             <p>
               Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-            </p>
-
-            <h4>Popover in a modal</h4>
-            <p>
-              there is a{' '}
-              <OverlayTrigger overlay={popover}>
-                <a href="#popover">popover</a>
-              </OverlayTrigger>{' '}
-              here
-            </p>
-
-            <h4>Tooltips in a modal</h4>
-            <p>
-              there is a{' '}
-              <OverlayTrigger overlay={tooltip}>
-                <a href="#tooltip">tooltip</a>
-              </OverlayTrigger>{' '}
-              here
             </p>
 
             <hr />
