@@ -1,24 +1,23 @@
-# README
+# Boba BAE
+##  Motivation 
+You walk into a place that you have never been to before. It has good yelp reviews, but you become overwhelmed by the number of options. What if there was some way to know what the "Top Rated" items are?
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Features
 
-Things you may want to cover:
+## Tech/framework used
+### Frontend 
+* React
+* Redux
+* Styled Components
+### Backend
+* Ruby on Rails
+* Axios
+* PostgreSQL
+### APIs
+* Yelp Fusion
+* Google Maps Embed
 
-* Ruby version
+## Code Example 
 
-* System dependencies
+## Future Features
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
