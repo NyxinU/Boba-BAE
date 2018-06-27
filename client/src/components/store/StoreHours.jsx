@@ -7,7 +7,7 @@ const StyledStoreHours = styled.div`
 `;
 
 const OpenClosedLabel = Text.extend`
-  color: ${props => props.open ? "#00c600" : "black" };
+  color: ${props => props.open ? "#00c600" : "red" };
 `;
 
 const StoreHours = ({ hours }) => {

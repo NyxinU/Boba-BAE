@@ -38,4 +38,3 @@ export const StyledIcon = styled.i`
   margin-bottom: 4vw;
 `;
 
-

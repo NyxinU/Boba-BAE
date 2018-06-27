@@ -29,7 +29,6 @@ const StoreInformation = ({ store }) => (
     <Line />
     <CallButton phone={store.phone} displayPhone={store.display_phone} />
     <Line />
-    <StoreMoreInfo />
   </div>
 );
 
