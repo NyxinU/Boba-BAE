@@ -1,21 +1,15 @@
 import "../App.css";
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import styled from 'styled-components';
 
+import Home from "./home/Home";
 import StoreShowContainer from './store/StoreShowContainer';
 
-const StyledApp = styled.div`
-  font-family: 'Roboto', sans-serif;
-`;
-
 const App = () => (
-  <StyledApp>
     <Switch>
+      <Route exact path ="/" component={Home} />
       <Route exact path="/biz/:businessId" component={StoreShowContainer} />
-      <Route exact path="/biz/:businessId/more" />
     </Switch>
-  </StyledApp>
 );
 
 export default App;

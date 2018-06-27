@@ -7,7 +7,6 @@ import StoreActionButtons from "./StoreActionButtons";
 import StoreMap from "./StoreMap";
 import StoreAddress from "./StoreAddress";
 import CallButton from "../action_buttons/CallButton";
-import StoreMoreInfo from "./StoreMoreInfo";
 
 const StoreName = styled.h2`
   margin-top: 4vw;

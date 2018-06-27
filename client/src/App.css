@@ -1,23 +1,8 @@
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
 body {
   margin: auto 5vw;
 }
 
-.fade {
-  -webkit-transition: opacity 0s linear;
-  -o-transition: opacity 0s linear;
-  transition: opacity 0s linear;
-}
-
-.modal-dialog {
-  margin: 0;
-}
-
-.modal-content {
-  border: 0;
-  border-radius: 0;
-  outline: 0;
-}
-
-.modal-body {
-  padding: 0;
-}
