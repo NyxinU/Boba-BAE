@@ -8,7 +8,9 @@ You walk into a place that you have never been to before. It has good yelp revie
 Currently only styled for mobile screen size
 
 ## Features
-* Displays store information
+* Displays information retrieved from Yelp Fusion Api
+* Integrated Google Maps Embed Api to easily search for directions
+
 ![Alt text](/readme_imgs/StoreInformation.png)
 
 ## Tech/framework used
