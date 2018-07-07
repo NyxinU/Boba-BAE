@@ -6,3 +6,11 @@ body {
   margin: 0;
 }
 
+ .custom-modal {
+   width: 100vw;
+   margin: 0;
+   border: 0;
+   outline: 0;
+   border-radius: 0; 
+   box-shadow: 0;
+ }

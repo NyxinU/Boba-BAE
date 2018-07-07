@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
+import SearchModal from "./SearchModal"
 
 const StyledHeader = styled.div`
   display: flex;
-  justify-content: center;
   align-items: center;
   width: 100vw;
   height: 10vw;
@@ -11,6 +11,7 @@ const StyledHeader = styled.div`
 `;
 
 const StyledLink = styled.a`
+  margin: auto;
   font-size: 5vw;
   font-family: 'Pacifico', cursive;
   color: white;
@@ -27,6 +28,7 @@ const HeaderContainer = () => {
   return (
     <StyledHeader>
       <StyledLink href="/">Boba Bae</StyledLink>
+      <SearchModal />
     </StyledHeader>
   );
 };
