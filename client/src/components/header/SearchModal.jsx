@@ -21,7 +21,6 @@ class SearchModal extends React.Component {
 
     this.state = {
       show: false,
-      value:"",
       keywords:"",
       location:"",
     };

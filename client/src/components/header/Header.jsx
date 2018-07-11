@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import SearchModal from "./SearchModal"
+import SearchModal from "./SearchModal";
 
 const StyledHeader = styled.div`
   display: flex;

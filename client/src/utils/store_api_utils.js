@@ -8,3 +8,11 @@ export const fetchStore = id => (
     url: `${url}/api/stores/${id}`,
   })
 );
+
+export const fetchStores = data => (
+  axios({
+    method: 'GET',
+    url: `${url}/api/stores/`,
+    data: {data},
+  })
+);

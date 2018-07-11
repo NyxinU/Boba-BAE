@@ -3,7 +3,7 @@ import React from 'react';
 import styled from "styled-components"
 import { Route, Switch } from 'react-router-dom';
 
-import HeaderContainer from "./header/HeaderContainer";
+import Header from "./header/Header";
 import Home from "./home/Home";
 import StoreShowContainer from './store/StoreShowContainer';
 
@@ -13,7 +13,7 @@ const StyledApp = styled.div`
 
 const App = () => (
   <div>
-    <HeaderContainer />
+    <Header />
     <Switch>
       <StyledApp>
         <Route exact path ="/" component={Home} />

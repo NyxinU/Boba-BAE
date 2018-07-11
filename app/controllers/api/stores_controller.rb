@@ -13,6 +13,17 @@ class Api::StoresController < ApplicationController
     end 
   end 
 
+  def index 
+    response = search(params[:term], params[:location])
+    filtered_response = response["businesses"].select { |store| find_categories(store).include?("bubbletea")}
+    
+    if filtered_response.length > 0 
+      render json: filtered_response.to_json
+    else
+      render json: { error: "Could not find ant results" }, status: 404
+    end
+  end 
+
   def show
     yelp_store_info = get_store_info(params[:id])
     @store = Store.find_by(yelp_store_id: yelp_store_info["alias"])
@@ -56,5 +67,16 @@ class Api::StoresController < ApplicationController
     response = HTTP.auth("Bearer #{API_KEY}").get(url)
     response.parse
   end 
+
+  def search(term, location)
+    url = "#{API_HOST}#{SEARCH_PATH}"
+    params = {
+      term: "boba" + " " + term,
+      location: location,
+      limit: SEARCH_LIMIT
+    }
+    response = HTTP.auth("Bearer #{API_KEY}").get(url, params: params)
+    response.parse
+  end
 
 end
