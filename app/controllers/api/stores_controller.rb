@@ -16,7 +16,7 @@ class Api::StoresController < ApplicationController
   def index 
     response = search(params[:term], params[:location])
     
-    if response.length > 0 
+    if response["businesses"].length > 0 
       render json: response.to_json
     else
       render json: { error: "Could not find any results" }
@@ -24,7 +24,7 @@ class Api::StoresController < ApplicationController
   end 
 
   def show
-    yelp_store_info = get_store_info(params[:id])
+    yelp_store_info = get_store_info(store_params)
     @store = Store.find_by(yelp_store_id: yelp_store_info["alias"])
 
     unless yelp_store_info["error"]
