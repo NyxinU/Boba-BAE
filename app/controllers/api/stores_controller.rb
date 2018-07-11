@@ -20,7 +20,7 @@ class Api::StoresController < ApplicationController
     if filtered_response.length > 0 
       render json: filtered_response.to_json
     else
-      render json: { error: "Could not find ant results" }, status: 404
+      render json: { error: "Could not find any results" }
     end
   end 
 
@@ -71,10 +71,11 @@ class Api::StoresController < ApplicationController
   def search(term, location)
     url = "#{API_HOST}#{SEARCH_PATH}"
     params = {
-      term: "boba" + " " + term,
+      term: "#{DEFAULT_TERM} #{term}",
       location: location,
       limit: SEARCH_LIMIT
     }
+    p params
     response = HTTP.auth("Bearer #{API_KEY}").get(url, params: params)
     response.parse
   end

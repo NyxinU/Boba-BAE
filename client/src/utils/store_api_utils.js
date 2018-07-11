@@ -9,10 +9,10 @@ export const fetchStore = id => (
   })
 );
 
-export const fetchStores = data => (
+export const fetchStores = (term, location) => (
   axios({
     method: 'GET',
     url: `${url}/api/stores/`,
-    data: {data},
+    params: { term: term, location: location },
   })
 );
