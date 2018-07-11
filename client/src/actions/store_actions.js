@@ -1,6 +1,7 @@
 import * as StoreApiUtil from '../utils/store_api_utils';
 
 export const RECEIVE_STORE = 'RECEIVE_STORE';
+export const RECEIVE_STORES = 'RECEIVE_STORES';
 // export const RECEIVE_STORE_ERRORS = 'RECEIVE_STORE_ERRORS';
 
 export const receiveStore = store => ({
@@ -8,10 +9,15 @@ export const receiveStore = store => ({
   store,
 });
 
+export const receiveStores = stores => ({
+  type: RECEIVE_STORES,
+  stores,
+});
+
 export const fetchStore = store => dispatch => (StoreApiUtil.fetchStore(store)
   .then(store => (dispatch(receiveStore(store.data))))
 );
 
 export const fetchStores = stores => dispatch => (StoreApiUtil.fetchStores(stores)
-  .then(stores => (dispatch(receiveStore(stores.data))))
+  .then(stores => (dispatch(receiveStores(stores.data))))
 );
