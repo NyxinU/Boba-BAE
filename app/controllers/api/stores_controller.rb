@@ -15,10 +15,9 @@ class Api::StoresController < ApplicationController
 
   def index 
     response = search(params[:term], params[:location])
-    filtered_response = response["businesses"].select { |store| find_categories(store).include?("bubbletea")}
     
-    if filtered_response.length > 0 
-      render json: filtered_response.to_json
+    if response.length > 0 
+      render json: response.to_json
     else
       render json: { error: "Could not find any results" }
     end
@@ -58,8 +57,8 @@ class Api::StoresController < ApplicationController
   BUSINESS_PATH = "/v3/businesses/"  # trailing / because we append the business id to the path
 
   DEFAULT_BUSINESS_ID = "yelp-san-francisco"
-  DEFAULT_TERM = "boba"
-  DEFAULT_LOCATION = "San Francisco, CA"
+  DEFAULT_LOCATION = "San Francisco, CA" 
+  DEFAULT_CATEGORY = "bubbletea"
   SEARCH_LIMIT = 5
 
   def get_store_info(yelp_store_id)
@@ -71,11 +70,11 @@ class Api::StoresController < ApplicationController
   def search(term, location)
     url = "#{API_HOST}#{SEARCH_PATH}"
     params = {
-      term: "#{DEFAULT_TERM} #{term}",
+      term: term,
       location: location,
-      limit: SEARCH_LIMIT
+      limit: SEARCH_LIMIT,
+      categories: DEFAULT_CATEGORY
     }
-    p params
     response = HTTP.auth("Bearer #{API_KEY}").get(url, params: params)
     response.parse
   end
