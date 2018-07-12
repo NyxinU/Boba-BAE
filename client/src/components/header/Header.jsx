@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import SearchModal from "./SearchModal";
+import SearchModalContainer from "./SearchModalContainer";
 
 const StyledHeader = styled.div`
   display: flex;
@@ -28,7 +28,7 @@ const HeaderContainer = () => {
   return (
     <StyledHeader>
       <StyledLink href="/">Boba Bae</StyledLink>
-      <SearchModal />
+      <SearchModalContainer />
     </StyledHeader>
   );
 };

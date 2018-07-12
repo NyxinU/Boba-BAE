@@ -24,7 +24,7 @@ class Api::StoresController < ApplicationController
   end 
 
   def show
-    yelp_store_info = get_store_info(store_params)
+    yelp_store_info = get_store_info(params[:id])
     @store = Store.find_by(yelp_store_id: yelp_store_info["alias"])
 
     unless yelp_store_info["error"]
@@ -67,7 +67,7 @@ class Api::StoresController < ApplicationController
     response.parse
   end 
 
-  def search(term, location)
+  def search(term = DEFAULT_CATEGORY, location = DEFAULT_LOCATION)
     url = "#{API_HOST}#{SEARCH_PATH}"
     params = {
       term: term,

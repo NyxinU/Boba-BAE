@@ -18,6 +18,6 @@ export const fetchStore = store => dispatch => (StoreApiUtil.fetchStore(store)
   .then(store => (dispatch(receiveStore(store.data))))
 );
 
-export const fetchStores = stores => dispatch => (StoreApiUtil.fetchStores(stores)
+export const fetchStores = (term, location) => dispatch => (StoreApiUtil.fetchStores(term, location)
   .then(stores => (dispatch(receiveStores(stores.data))))
 );

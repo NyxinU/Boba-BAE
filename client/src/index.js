@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import Root from './components/Root';
 import registerServiceWorker from './registerServiceWorker';
 import configureStore from './store/store';
-import * as StoreApi from './utils/store_api_utils';
+import * as StoreApi from './actions/store_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   const store = configureStore();

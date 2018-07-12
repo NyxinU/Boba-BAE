@@ -21,7 +21,7 @@ class SearchModal extends React.Component {
 
     this.state = {
       show: false,
-      keywords:"",
+      term:"",
       location:"",
     };
   }
@@ -41,11 +41,11 @@ class SearchModal extends React.Component {
   }
 
   handleSubmit(event) {
-    alert('An essay was submitted: ' + this.state.keywords + this.state.location);
     event.preventDefault();
   }
 
   render() {
+    console.log(this.props)
     return (
       <ButtonToolbar>
         <StyledSearchIcon className="fas fa-search" onClick={this.handleShow} />
@@ -55,7 +55,7 @@ class SearchModal extends React.Component {
             </Modal.Header>
             <Modal.Body>
               <form onSubmit={this.handleSubmit}>
-                <input type="text" name="keywords" placeholder="keywords" value={this.state.keywords} onChange={this.handleChange}/>
+                <input type="text" name="term" placeholder="term" value={this.state.term} onChange={this.handleChange}/>
                 <input type="text" name="location" placeholder="location" value={this.state.location} onChange={this.handleChange}/>
                 <input type="submit" value="Search"/>
               </form>
