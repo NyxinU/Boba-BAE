@@ -19,7 +19,7 @@ class StoreShow extends React.Component {
   }
 
   render() {
-    if (this.props.store === undefined) {
+    if (this.props.store === undefined || typeof(this.props.store) !== "object") {
       return (
         <div />
       );
