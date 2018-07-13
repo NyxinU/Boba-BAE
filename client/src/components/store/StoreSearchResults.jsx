@@ -11,7 +11,9 @@ class StoreSearchResults extends React.Component {
   }
   render() {
     return (
-      <div></div>
+      <div>search results</div>
     );
   }
 }
+
+export default StoreSearchResults;

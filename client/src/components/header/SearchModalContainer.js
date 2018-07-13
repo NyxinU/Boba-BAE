@@ -3,13 +3,13 @@ import { withRouter } from 'react-router-dom'
 import { fetchStores } from '../../actions/store_actions';
 import SearchModal from './SearchModal';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = () => {
   return {}
 };
 
-const mapDispatchToProps = dispatch => ({
-  fetchStores: (term, location) => dispatch(fetchStores(term, location)),
-});
+const mapDispatchToProps = () => {
+  return {}
+};
 
 export default withRouter(connect(
   mapStateToProps,
