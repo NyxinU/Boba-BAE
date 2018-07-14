@@ -43,11 +43,10 @@ class SearchModal extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     this.props.history.push(`/search?term=${this.state.term}&location=${this.state.location}`);
-    // this.props.fetchStores(this.state.term, this.state.location);
+    this.handleHide();
   }
 
   render() {
-    console.log(this.props);
     return (
       <ButtonToolbar>
         <StyledSearchIcon className="fas fa-search" onClick={this.handleShow} />
