@@ -70,7 +70,7 @@ class Api::StoresController < ApplicationController
   def search(term = DEFAULT_CATEGORY, location = DEFAULT_LOCATION)
     url = "#{API_HOST}#{SEARCH_PATH}"
     params = {
-      term: term,
+      term: `#{term} milk tea boba`,
       location: location,
       limit: SEARCH_LIMIT,
       categories: DEFAULT_CATEGORY

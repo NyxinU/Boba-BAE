@@ -10,6 +10,13 @@ class StoreSearchResults extends React.Component {
     this.props.fetchStores(keys.term, keys.location);
   }
 
+  componentDidUpdate(prevProps) {
+    if (prevProps.location.search !== this.props.location.search) {
+      const keys = queryString.parse(this.props.location.search);
+      this.props.fetchStores(keys.term, keys.location);
+    }
+  }
+
   render() {
     console.log(this.props)
     if (this.props.stores === undefined) {

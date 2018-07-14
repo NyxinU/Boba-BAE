@@ -26,10 +26,10 @@ const StoreName = styled.h2`
 const StyledImg = styled.img`
   display: inline-block;
   object-fit: cover;
-  margin-top: 4vw;
+  margin-top: 4.5vw;
   margin-right: 2vw;
-  width: 23vw;
-  height: 23vw;
+  width: 22vw;
+  height: 22vw;
   border-radius: 2vw;
 `;
 

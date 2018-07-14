@@ -1,5 +1,6 @@
 import React from "react";
 // import styled from "styled-components"
+import queryString from 'query-string';
 import { Modal, ButtonToolbar, } from 'react-bootstrap';
 import { StyledIcon, Label } from "../GlobalStyledComponents";
 
