@@ -1,6 +1,6 @@
 import React from "react";
 // import styled from "styled-components"
-import { Modal, Button, ButtonToolbar, ModalBody } from 'react-bootstrap';
+import { Modal, ButtonToolbar, } from 'react-bootstrap';
 import { StyledIcon, Label } from "../GlobalStyledComponents";
 
 const StyledSearchIcon = StyledIcon.extend`

@@ -1,10 +1,16 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom'
 import { fetchStores } from '../../actions/store_actions';
+import {getStores} from '../../reducers/selector';
 import StoreSearchResults from './StoreSearchResults';
 
 const mapStateToProps = (state) => {
-  return {}
+  if (state.entities.stores.stores) {
+    const stores = state.entities.stores.stores.businesses
+    return {stores}
+  } else {
+    return {}
+  }
 };
 
 const mapDispatchToProps = dispatch => ({

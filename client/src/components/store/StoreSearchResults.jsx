@@ -1,25 +1,25 @@
 import React from 'react';
 import queryString from 'query-string';
+import StoreSearchResult from './StoreSearchResult';
 
 class StoreSearchResults extends React.Component {
-  constructor(props, context) {
-    super(props,context);
-
-    this.state = {
-      stores: [],
-    };
-
-  }
 
   componentDidMount() {
-    const values = queryString.parse(this.props.location.search);
-    console.log(values.term);
-    console.log(values.location);
+    const keys = queryString.parse(this.props.location.search);
+    this.props.fetchStores(keys.term, keys.location);
   }
 
   render() {
+    console.log(this.props)
+    if (this.props.stores === undefined) {
+      return (
+        <div />
+      );
+    }
     return (
-      <div>search results</div>
+      <div>
+        {this.props.stores.map(store => <StoreSearchResult store={store} />)}
+      </div>
     );
   }
 }
