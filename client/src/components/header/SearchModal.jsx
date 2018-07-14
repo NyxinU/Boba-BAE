@@ -20,11 +20,23 @@ class SearchModal extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
 
+    const keys = queryString.parse(this.props.location.search);
     this.state = {
       show: false,
-      term:"",
-      location:"",
+      term: keys.term,
+      location: keys.location,
     };
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.location.search !== this.props.location.search) {
+      const keys = queryString.parse(this.props.location.search);
+      const obj = { 
+        term: keys.term,
+        location: keys.location 
+      };
+      this.setState(obj);
+    }
   }
 
   handleShow() {

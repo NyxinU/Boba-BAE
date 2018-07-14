@@ -11,16 +11,11 @@ const StyledStoreMap = styled.iframe`
 `;
 
 const StoreMap = ({name, location}) => {
+  const parsedName = name.split("&").join("");
   return (
     <StyledStoreMap 
       src={ 
-        `https://www.google.com/maps/embed/v1/place?q=${name}
-        %20${location.address1}
-        %20${location.address2}
-        %20${location.city}
-        %20${location.zip_code}
-        &zoom=16
-        &key=AIzaSyDKNfQclyQTJPHelT66kOz5gJygWfmyQTM`
+        `https://www.google.com/maps/embed/v1/place?q=${parsedName}${location.address1}${location.address2}${location.city}${location.zip_code}&zoom=16&key=AIzaSyDKNfQclyQTJPHelT66kOz5gJygWfmyQTM`
       } allowFullScreen>
     </StyledStoreMap>
   );

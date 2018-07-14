@@ -70,10 +70,11 @@ class Api::StoresController < ApplicationController
   def search(term = DEFAULT_CATEGORY, location = DEFAULT_LOCATION)
     url = "#{API_HOST}#{SEARCH_PATH}"
     params = {
-      term: `#{term} milk tea boba`,
+      term: `#{term}`,
       location: location,
       limit: SEARCH_LIMIT,
-      categories: DEFAULT_CATEGORY
+      categories: DEFAULT_CATEGORY,
+      sort_by: "best_match"
     }
     response = HTTP.auth("Bearer #{API_KEY}").get(url, params: params)
     response.parse
