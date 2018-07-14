@@ -1,6 +1,7 @@
 import React from 'react';
 import queryString from 'query-string';
 import StoreSearchResult from './StoreSearchResult';
+import { Line } from "../GlobalStyledComponents";
 
 class StoreSearchResults extends React.Component {
 
@@ -18,7 +19,8 @@ class StoreSearchResults extends React.Component {
     }
     return (
       <div>
-        {this.props.stores.map(store => <StoreSearchResult store={store} />)}
+        <Line />
+        {this.props.stores.map((store, idx) => <StoreSearchResult key={idx} store={store} />)}
       </div>
     );
   }

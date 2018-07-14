@@ -59,7 +59,7 @@ class Api::StoresController < ApplicationController
   DEFAULT_BUSINESS_ID = "yelp-san-francisco"
   DEFAULT_LOCATION = "San Francisco, CA" 
   DEFAULT_CATEGORY = "bubbletea"
-  SEARCH_LIMIT = 5
+  SEARCH_LIMIT = 10
 
   def get_store_info(yelp_store_id)
     url = "#{API_HOST}#{BUSINESS_PATH}#{yelp_store_id}"
