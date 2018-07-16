@@ -11,6 +11,7 @@ const OpenClosedLabel = Text.extend`
 `;
 
 const StoreHours = ({ hours }) => {
+  hours = hours[0];
   const timeConvert = {
     "0000": "12:00 am",
     "0100": "1:00 am",
@@ -40,24 +41,24 @@ const StoreHours = ({ hours }) => {
 
   const getStoreHours = () => {
     const today = new Date();
-    const day = today.getDay();
+    let day = today.getDay();
     if (day === 0) { 
-      const storeHoursOpen = hours[0].open[day + 6];
-      return [storeHoursOpen.start, storeHoursOpen.end];
-     } else { 
-      const storeHoursOpen = hours[0].open[(day - 1)];
-      return [storeHoursOpen.start, storeHoursOpen.end];
-     }
+      day += 6;
+    } else { 
+      day -= 1;
+    }
+    for (let index = 0; index < hours.open.length; index++) {
+      let hash = hours.open[index];
+      if( hash.day === day) { return [hash.start, hash.end]; }
+    }
+    return false;
   };
 
   const storeHours = getStoreHours();
   return (
     <StyledStoreHours>
-      <OpenClosedLabel open={hours[0].is_open_now}>{hours[0].is_open_now ? "Open" : "Closed"}</OpenClosedLabel>
-      <Text>&nbsp;&#8226;&nbsp;</Text>
-      <Text>
-        {`${timeConvert[storeHours[0]]}`} - {`${timeConvert[storeHours[1]]}`}
-      </Text>
+      <OpenClosedLabel open={hours.is_open_now}>{hours.is_open_now ? "Open" : "Closed"}</OpenClosedLabel>
+      {storeHours ? <Text>&nbsp;&#8226;&nbsp;{timeConvert[storeHours[0]]} - {timeConvert[storeHours[1]]}</Text> : ""}
     </StyledStoreHours>
   );
 };

@@ -55,6 +55,7 @@ class Api::StoresController < ApplicationController
   API_HOST = "https://api.yelp.com"
   SEARCH_PATH = "/v3/businesses/search"
   BUSINESS_PATH = "/v3/businesses/"  # trailing / because we append the business id to the path
+  AUTOCOMPLETE_PATH = "/v3/autocomplete"
 
   DEFAULT_BUSINESS_ID = "yelp-san-francisco"
   DEFAULT_LOCATION = "San Francisco, CA" 
@@ -70,14 +71,22 @@ class Api::StoresController < ApplicationController
   def search(term = DEFAULT_CATEGORY, location = DEFAULT_LOCATION)
     url = "#{API_HOST}#{SEARCH_PATH}"
     params = {
-      term: `#{term}`,
+      term: `#{term} milk tea boba`,
       location: location,
       limit: SEARCH_LIMIT,
       categories: DEFAULT_CATEGORY,
-      sort_by: "best_match"
     }
     response = HTTP.auth("Bearer #{API_KEY}").get(url, params: params)
     response.parse
   end
+
+  def autocomplete(str)
+    url = "#{API_HOST}#{AUTOCOMPLETE_PATH}"
+    params = {
+      text: str
+    }
+    response = HTTP.auth("Bearer #{API_KEY}").get(url, params: params)
+    response.parse
+  end 
 
 end

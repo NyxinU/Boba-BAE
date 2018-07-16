@@ -18,7 +18,6 @@ class StoreSearchResults extends React.Component {
   }
 
   render() {
-    console.log(this.props)
     if (this.props.stores === undefined) {
       return (
         <div />

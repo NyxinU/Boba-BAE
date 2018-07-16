@@ -19,28 +19,49 @@ class SearchModal extends React.Component {
     this.handleHide = this.handleHide.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.getLocation = this.getLocation.bind(this);
+    this.showPosition = this.showPosition.bind(this);
 
     const keys = queryString.parse(this.props.location.search);
     this.state = {
       show: false,
       term: keys.term,
       location: keys.location,
+      coordinates: ""
     };
   }
+
 
   componentDidUpdate(prevProps) {
     if (prevProps.location.search !== this.props.location.search) {
       const keys = queryString.parse(this.props.location.search);
-      const obj = { 
+      const obj = {
+        show: false, 
         term: keys.term,
         location: keys.location 
       };
       this.setState(obj);
     }
   }
+  
+  showPosition(position) {
+    const obj = { 
+      location: `${position.coords.latitude}, ${position.coords.longitude}`
+    };
+    this.setState(obj);
+  }
+
+  getLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(this.showPosition);
+    } else {
+      console.log("Geolocation is not supported by this browser.");
+    }
+  }
 
   handleShow() {
     this.setState({ show: true });
+    this.getLocation();
   }
 
   handleHide() {
