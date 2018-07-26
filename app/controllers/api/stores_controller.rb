@@ -71,22 +71,22 @@ class Api::StoresController < ApplicationController
   def search(term = DEFAULT_CATEGORY, location = DEFAULT_LOCATION)
     url = "#{API_HOST}#{SEARCH_PATH}"
     params = {
-      term: `#{term} milk tea boba`,
+      term: "#{term}",
       location: location,
       limit: SEARCH_LIMIT,
-      categories: DEFAULT_CATEGORY,
+      categories: DEFAULT_CATEGORY
     }
     response = HTTP.auth("Bearer #{API_KEY}").get(url, params: params)
     response.parse
   end
 
-  def autocomplete(str)
-    url = "#{API_HOST}#{AUTOCOMPLETE_PATH}"
-    params = {
-      text: str
-    }
-    response = HTTP.auth("Bearer #{API_KEY}").get(url, params: params)
-    response.parse
-  end 
+  # def autocomplete(str)
+  #   url = "#{API_HOST}#{AUTOCOMPLETE_PATH}"
+  #   params = {
+  #     text: str
+  #   }
+  #   response = HTTP.auth("Bearer #{API_KEY}").get(url, params: params)
+  #   response.parse
+  # end 
 
 end
